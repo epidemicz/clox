@@ -1,4 +1,4 @@
-CFLAGS	= -Wall -Wswitch-enum
+CFLAGS	= -Wall -Wswitch-enum -gdwarf-4 -g3
 
 all:
 	$(CC) src/*.c -o build/main.exe $(CFLAGS)
