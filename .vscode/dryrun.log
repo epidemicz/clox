@@ -1,0 +1,6 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory `d:/Dev/c/clox'
+cc src/*.c -o build/main.exe -Wall -Wswitch-enum -gdwarf-4 -g3
+./build/main.exe
+make.exe: Leaving directory `d:/Dev/c/clox'
+ 

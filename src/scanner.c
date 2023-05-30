@@ -214,3 +214,12 @@ Token scanToken() {
 
     return errorToken("Unexpected character.");
 }
+
+const char* getTokenType(TokenType type) {
+    switch (type) {
+        case TOKEN_NUMBER: return "NUMBER";
+        case TOKEN_STRING: return "STRING";
+        case TOKEN_IDENTIFIER: return "IDENTIFIER";
+        default: return "UNKNOWN";
+    }
+}

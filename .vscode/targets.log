@@ -1,0 +1,344 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-pc-mingw32
+ 
+
+# Make data base, printed on Wed Aug 10 22:26:54 2022
+
+# Variables
+
+# environment
+POWERSHELL_DISTRIBUTION_CHANNEL = MSI:Windows 10 Pro
+# automatic
+?F = $(notdir $?)
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# makefile
+MAKEFLAGS = Rrqp
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+HOMEDRIVE = C:
+# automatic
+@F = $(notdir $@)
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile
+CURDIR := d:/Dev/c/clox
+# default
+SHELL := sh.exe
+# environment
+WINDIR = C:\WINDOWS
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
+# makefile (from `makefile', line 1)
+CFLAGS = -Wall -Wswitch-enum -gdwarf-4 -g3
+# environment
+ONEDRIVE = C:\Users\timze\OneDrive
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# makefile (from `makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# environment
+TMP = C:\Users\timze\AppData\Local\Temp
+# environment
+NEKO_INSTPATH = C:\HaxeToolkit\neko
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+PROGRAMDATA = C:\ProgramData
+# environment
+VSCODE_CWD = D:\Dev\c
+# environment
+PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files\PlasticSCM5\server;C:\Program Files\PlasticSCM5\client;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\Tailscale IPN;C:\Program Files\PowerShell\7\;C:\Program Files (x86)\dotnet\;C:\HaxeToolkit\haxe;C:\HaxeToolkit\neko;C:\Program Files\Neovim\/bin;C:\Program Files\Go\bin;C:\Users\timze\v\.bin;C:\Users\timze\scoop\shims;C:\Users\timze\.cargo\bin;C:\Users\timze\AppData\Local\Microsoft\WindowsApps;C:\Users\timze\.dotnet\tools;C:\Users\timze\Desktop;C:\Users\timze\go\bin;C:\emacs-27.1\bin;C:\Users\timze\.emacs.d\bin;C:\java\bin;C:\Users\timze\.dotnet\tools;C:\msys64\mingw32\bin;C:\Users\timze\AppData\Local\Microsoft\WindowsApps;C:\Users\timze\AppData\Roaming\npm;C:\Program Files\Java\jre1.8.0_311\bin;C:\Program Files\Java\jre1.8.0_311;C:\Users\timze\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.1.3\bin;;C:\Users\timze\AppData\Local\Programs\oh-my-posh\bin;C:\tcc;c:\Odin;C:\tools\helix-22.05-x86_64-windows;C:\emacs-28.1\bin;C:\Users\timze\.emacs.d\bin;C:\tools\ripgrep-13.0.0;C:\tools\fd-v8.4.0;C:\tools\bibleapi;C:\Users\timze\go\bin;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\Hostx64\x64\;C:\Program Files (x86)\GnuWin32\bin\;
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# environment
+PROCESSOR_ARCHITECTURE = x86
+# environment
+USERPROFILE = C:\Users\timze
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# environment
+GOPATH = D:\Dev\go
+# environment
+NUMBER_OF_PROCESSORS = 16
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives
+# automatic
+%F = $(notdir $%)
+# environment
+POSH_THEMES_PATH = C:\Users\timze\AppData\Local\Programs\oh-my-posh\themes
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_15108_XNQDSQJSFZKSLSHP
+# environment
+COMPUTERNAME = EPI-RYZEN
+# environment
+PROGRAMFILES = C:\Program Files (x86)
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+HAXEPATH = C:\HaxeToolkit\haxe
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERNAME = timze
+# environment
+PUBLIC = C:\Users\Public
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = C:\Users\timze
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\timze\AppData\Roaming\Code\CachedData\6d9b74a70ca9c7733b29f0456fd8195364076dda
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# environment
+LOGONSERVER = \\EPI-RYZEN
+# environment
+VSLOCATION = C:\Program Files\Microsoft Visual Studio\2022\Community
+# environment
+ONEDRIVECONSUMER = C:\Users\timze\OneDrive
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+USERDOMAIN = EPI-RYZEN
+# environment
+INTELLIJ IDEA COMMUNITY EDITION = C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.1.3\bin;
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# default
+MAKE_VERSION := 3.81
+# makefile
+.DEFAULT_GOAL := all
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LOCALAPPDATA = C:\Users\timze\AppData\Local
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+# default
+MAKE_COMMAND := make.exe
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# environment
+AMDRMSDKPATH = C:\Program Files\AMD\RyzenMasterSDK\
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
+# environment
+OS = Windows_NT
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\bc33744da89cd66161d90e7d223fd445-1.70.1-main-sock
+# environment
+HOMEPATH = \Users\timze
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+PROMPT = $P$G
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+SYSTEMROOT = C:\WINDOWS
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+APPDATA = C:\Users\timze\AppData\Roaming
+# environment
+__COMPAT_LAYER = DetectorsAppHealth
+# environment
+TEMP = C:\Users\timze\AppData\Local\Temp
+# environment
+COMSPEC = C:\WINDOWS\system32\cmd.exe
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SYSTEMDRIVE = C:
+# environment
+SESSIONNAME = Console
+# environment
+PROCESSOR_REVISION = 7100
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+PROCESSOR_LEVEL = 23
+# environment
+VSCODE_PID = 15108
+# environment
+USERDOMAIN_ROAMINGPROFILE = EPI-RYZEN
+# variable set hash-table stats:
+# Load=94/1024=9%, Rehash=0, Collisions=10/118=8%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# : could not be stat'd.
+# C:\Program Files\Java\jre1.8.0_311 (key C:/Program Files/Java/jre1.8.0_311, mtime 1642274521): 12 files, no impossibilities.
+# C:\Program Files\Common Files\Oracle\Java\javapath (key C:/Program Files/Common Files/Oracle/Java/javapath, mtime 1654395520): 6 files, no impossibilities.
+# C:\Program Files\Docker\Docker\resources\bin (key C:/Program Files/Docker/Docker/resources/bin, mtime 1643596377): 13 files, no impossibilities.
+# C:\Program Files\Go\bin (key C:/Program Files/Go/bin, mtime 1659654379): 4 files, no impossibilities.
+# C:\Users\timze\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/timze/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1660181575): 4 files, no impossibilities.
+# C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin (key C:/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin, mtime 1638606318): 127 files, no impossibilities.
+# C:\Users\timze\AppData\Roaming\npm (key C:/Users/timze/AppData/Roaming/npm, mtime 1658628468): 15 files, no impossibilities.
+# C:\Users\timze\.dotnet\tools: could not be stat'd.
+# C:\Program Files\Microsoft SQL Server\150\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/150/Tools/Binn/, mtime 1638087151): 4 files, no impossibilities.
+# C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1622903042): 30 files, no impossibilities.
+# C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1655460439): 190 files, no impossibilities.
+# . (key d:/Dev/c/clox, mtime 1659890568): 8 files, no impossibilities.
+# C:\msys64\mingw32\bin (key C:/msys64/mingw32/bin, mtime 1618445129): 302 files, no impossibilities.
+# C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.1.3\bin (key C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2022.1.3/bin, mtime 1656964833): 31 files, no impossibilities.
+# C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1640565162): 13 files, no impossibilities.
+# C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1574317147): 10 files, no impossibilities.
+# C:\Users\timze\AppData\Local\Programs\oh-my-posh\bin (key C:/Users/timze/AppData/Local/Programs/oh-my-posh/bin, mtime 1659157464): 3 files, no impossibilities.
+# C:\emacs-28.1\bin (key C:/emacs-28.1/bin, mtime 1658707377): 73 files, no impossibilities.
+# C:\Users\timze\.cargo\bin (key C:/Users/timze/.cargo/bin, mtime 1638647682): 16 files, no impossibilities.
+# C:\tools\bibleapi (key C:/tools/bibleapi, mtime 1659201643): 4 files, no impossibilities.
+# C:\Program Files\dotnet\ (key C:/Program Files/dotnet/, mtime 1660181878): 13 files, no impossibilities.
+# C:\Users\timze\scoop\shims (key C:/Users/timze/scoop/shims, mtime 1659323589): 13 files, no impossibilities.
+# C:\Program Files\PlasticSCM5\server (key C:/Program Files/PlasticSCM5/server, mtime 1660171948): 530 files, no impossibilities.
+# C:\Users\timze\.emacs.d\bin (key C:/Users/timze/.emacs.d/bin, mtime 1658890603): 7 files, no impossibilities.
+# C:\HaxeToolkit\haxe (key C:/HaxeToolkit/haxe, mtime 1659309196): 15 files, no impossibilities.
+# c:\Odin (key c:/Odin, mtime 1658796976): 28 files, no impossibilities.
+# C:\Users\timze\AppData\Local\Microsoft\WindowsApps (key C:/Users/timze/AppData/Local/Microsoft/WindowsApps, mtime 1660177167): 44 files, no impossibilities.
+# C:\emacs-27.1\bin: could not be stat'd.
+# C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\Hostx64\x64\ (key C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.30.30705/bin/Hostx64/x64/, mtime 1658795196): 70 files, no impossibilities.
+# C:\Program Files\PowerShell\7\ (key C:/Program Files/PowerShell/7/, mtime 1657992709): 478 files, no impossibilities.
+# C:\Windows\System32\OpenSSH\: could not be stat'd.
+# C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1642274515): 5 files, no impossibilities.
+# C:\Program Files\PlasticSCM5\client (key C:/Program Files/PlasticSCM5/client, mtime 1645751856): 262 files, no impossibilities.
+# C:\Program Files\Microsoft SQL Server\130\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/130/Tools/Binn/, mtime 1587258274): 4 files, no impossibilities.
+# C:\Windows (key C:/Windows, mtime 1658889681): 120 files, no impossibilities.
+# C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/, mtime 1587258277): 7 files, no impossibilities.
+# C:\Users\timze\Desktop: could not be stat'd.
+# C:\tools\ripgrep-13.0.0 (key C:/tools/ripgrep-13.0.0, mtime 1658890456): 9 files, no impossibilities.
+# C:\Program Files\Java\jre1.8.0_311\bin (key C:/Program Files/Java/jre1.8.0_311/bin, mtime 1642274513): 130 files, no impossibilities.
+# C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\ (key C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/, mtime 1602112553): 144 files, no impossibilities.
+# C:\Program Files (x86)\dotnet\ (key C:/Program Files (x86)/dotnet/, mtime 1658031602): 8 files, no impossibilities.
+# C:\ProgramData\DockerDesktop\version-bin (key C:/ProgramData/DockerDesktop/version-bin, mtime 1643596102): 2 files, no impossibilities.
+# C:\Program Files (x86)\Tailscale IPN (key C:/Program Files (x86)/Tailscale IPN, mtime 1657853145): 7 files, no impossibilities.
+# C:\Users\timze\v\.bin (key C:/Users/timze/v/.bin, mtime 1658450586): 3 files, no impossibilities.
+# C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1602308833): 8 files, no impossibilities.
+# C:\Windows\system32 (key C:/Windows/system32, mtime 1658960776): 3110 files, no impossibilities.
+# C:\Program Files\Neovim\/bin (key C:/Program Files/Neovim/bin, mtime 1659319129): 34 files, no impossibilities.
+# C:\java\bin (key C:/java/bin, mtime 1614654892): 123 files, no impossibilities.
+# C:\HaxeToolkit\neko (key C:/HaxeToolkit/neko, mtime 1659309109): 27 files, no impossibilities.
+# C:\tcc (key C:/tcc, mtime 1658658920): 10 files, no impossibilities.
+# C:\Program Files (x86)\VMware\VMware Player\bin\ (key C:/Program Files (x86)/VMware/VMware Player/bin/, mtime 1651028202): 4 files, no impossibilities.
+# C:\Program Files (x86)\GnuWin32\bin\ (key C:/Program Files (x86)/GnuWin32/bin/, mtime 1659848272): 5 files, no impossibilities.
+# C:\Users\timze\go\bin (key C:/Users/timze/go/bin, mtime 1603670324): 3 files, no impossibilities.
+# C:\tools\helix-22.05-x86_64-windows (key C:/tools/helix-22.05-x86_64-windows, mtime 1658799587): 7 files, no impossibilities.
+# C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1574316467): 5 files, no impossibilities.
+# C:\tools\fd-v8.4.0 (key C:/tools/fd-v8.4.0, mtime 1658890517): 9 files, no impossibilities.
+
+# 6109 files, no impossibilities in 57 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+all:
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  commands to execute (from `makefile', line 4):
+	$(CC) src/*.c -o build/main.exe $(CFLAGS)
+	./build/main.exe
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-07 11:59:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=4/1024=0%, Rehash=0, Collisions=0/17=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Wed Aug 10 22:26:54 2022
+
+ 
