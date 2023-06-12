@@ -42,10 +42,12 @@ typedef struct {
 typedef struct {
     Token name;
     int depth;
+    bool mutable;
 } Local;
 
 typedef struct {
     Local locals[UINT8_COUNT];
+    Table constants;
     int localCount;
     int scopeDepth;
 } Compiler;
@@ -142,12 +144,13 @@ static void emitConstant(Value value) {
 }
 
 static void initCompiler(Compiler* compiler) {
+    initTable(&compiler->constants);
     compiler->localCount = 0;
     compiler->scopeDepth = 0;
     current = compiler;
 }
 
-static endCompiler() {
+static void endCompiler() {
     emitReturn();
 #ifdef DEBUG_PRINT_CODE 
     if (!parser.hadError) {
@@ -178,7 +181,19 @@ static ParseRule* getRule(TokenType type);
 static void parsePrecedence(Precedence precedence);
 
 static uint8_t identifierConstant(Token* name) {
-    return makeConstant(OBJ_VAL(copyString(name->start, name->length)));
+    Value value = OBJ_VAL(copyString(name->start, name->length));
+    return makeConstant(value);
+}
+
+static bool isGlobalMutable(Compiler* compiler, Token* name) {
+    ObjString* key = copyString(name->start, name->length);
+    Value value;
+
+    if (tableGet(&compiler->constants, key, &value) || tableGet(&vm.globals, key, &value)) {
+        return value.mutable;
+    }
+
+    return true;
 }
 
 static bool identifiersEqual(Token* a, Token* b) {
@@ -200,7 +215,11 @@ static int resolveLocal(Compiler* compiler, Token* name) {
     return -1;
 }
 
-static void addLocal(Token name) {
+static bool isLocalMutable(int n) {
+    return current->locals[n].mutable;
+}
+
+static void addLocal(Token name, bool mutable) {
     if (current->localCount == UINT8_COUNT) {
         error("Too many local variables in function.");
         return;
@@ -209,9 +228,10 @@ static void addLocal(Token name) {
     Local* local = &current->locals[current->localCount++];
     local->name = name;
     local->depth = -1;
+    local->mutable = mutable;
 }
 
-static void declareVariable() {
+static void declareVariable(bool mutable) {
     if (current->scopeDepth == 0) return;
 
     Token* name = &parser.previous;
@@ -227,14 +247,28 @@ static void declareVariable() {
 
     }
 
-    addLocal(*name);
+    addLocal(*name, mutable);
 }
 
 static uint8_t parseVariable(const char* errorMessage) {
     consume(TOKEN_IDENTIFIER, errorMessage);
 
-    declareVariable();
+    declareVariable(true);
     if (current->scopeDepth > 0) return 0;
+
+    return identifierConstant(&parser.previous);
+}
+
+static uint8_t parseConstant(const char* errorMessage) {
+    consume(TOKEN_IDENTIFIER, errorMessage);
+
+    declareVariable(false);
+    if (current->scopeDepth > 0) return 0;
+
+    ObjString* variableName = copyString(parser.previous.start, parser.previous.length);
+
+    // set constant table 
+    tableSet(&current->constants, variableName, BOOL_VAL(true));
 
     return identifierConstant(&parser.previous);
 }
@@ -250,6 +284,20 @@ static void defineVariable(uint8_t global) {
     }
 
     emitBytes(OP_DEFINE_GLOBAL, global);
+}
+
+static void defineConstant(uint8_t global) {
+    if (current->scopeDepth > 0) {
+        markInitialized();
+        return;
+    }
+
+    // may need a check here to see if const already defined
+
+    Value* value = &compilingChunk->constants.values[global];
+    value->mutable = false;
+
+    emitBytes(OP_DEFINE_CONSTANT_GLOBAL, global);
 }
 
 static void binary(bool canAssign) {
@@ -299,13 +347,21 @@ static void string(bool canAssign) {
 static void namedVariable(Token name, bool canAssign) {
     uint8_t getOp, setOp;
     int arg = resolveLocal(current, &name);
+    bool mutable = true;
+
     if (arg != -1) {
+        mutable = isLocalMutable(arg);
         getOp = OP_GET_LOCAL;
         setOp = OP_SET_LOCAL;
     } else {
+        mutable = !isGlobalMutable(current, &name);
         arg = identifierConstant(&name);
         getOp = OP_GET_GLOBAL;
         setOp = OP_SET_GLOBAL;
+    }
+
+    if (canAssign && check(TOKEN_EQUAL) && !mutable) {
+        error("Variable defined as const is immutable.");
     }
 
     if (canAssign && match(TOKEN_EQUAL)) {
@@ -372,6 +428,7 @@ ParseRule rules[] = {
   [TOKEN_THIS]          = {NULL,     NULL,   PREC_NONE},
   [TOKEN_TRUE]          = {literal,  NULL,   PREC_NONE},
   [TOKEN_VAR]           = {NULL,     NULL,   PREC_NONE},
+  [TOKEN_CONST]         = {NULL,     NULL,   PREC_NONE},
   [TOKEN_WHILE]         = {NULL,     NULL,   PREC_NONE},
   [TOKEN_ERROR]         = {NULL,     NULL,   PREC_NONE},
   [TOKEN_EOF]           = {NULL,     NULL,   PREC_NONE},
@@ -428,6 +485,19 @@ static void varDeclaration() {
     defineVariable(global);
 }
 
+static void constDeclaration() {
+    uint8_t global = parseConstant("Expect variable name.");
+
+    if (match(TOKEN_EQUAL)) {
+        expression();
+    } else {
+        error("Uninitialized const.");
+    }
+    consume(TOKEN_SEMICOLON, "Expect ';' after const declaration.");
+
+    defineConstant(global);
+}
+
 static void expressionStatement() {
     expression();
     consume(TOKEN_SEMICOLON, "Expect ';' after expression.");
@@ -467,6 +537,8 @@ static void synchronize() {
 static void declaration() {
     if (match(TOKEN_VAR)) {
         varDeclaration();
+    } else if (match(TOKEN_CONST)) {
+        constDeclaration();
     } else {    
         statement();
     }
