@@ -15,6 +15,7 @@ typedef enum {
 
 typedef struct {
     ValueType type;
+    bool mutable;
     union {
         bool boolean;
         double number;
@@ -31,10 +32,10 @@ typedef struct {
 #define AS_NUMBER(value)    ((value).as.number)
 #define AS_OBJ(value)       ((value).as.obj)
 
-#define BOOL_VAL(value)     ((Value){ VAL_BOOL, { .boolean = value }})
-#define NIL_VAL             ((Value){ VAL_NIL, { .number = 0 }})
-#define NUMBER_VAL(value)   ((Value){ VAL_NUMBER, { .number = value }})
-#define OBJ_VAL(object)     ((Value){ VAL_OBJ, { .obj = (Obj*)object}})
+#define BOOL_VAL(value)     ((Value){ VAL_BOOL    , true, { .boolean = value }})
+#define NIL_VAL             ((Value){ VAL_NIL     , true, { .number = 0 }})
+#define NUMBER_VAL(value)   ((Value){ VAL_NUMBER  , true, { .number = value }})
+#define OBJ_VAL(object)     ((Value){ VAL_OBJ     , true, { .obj = (Obj*)object}})
 
 typedef struct {
     int capacity;

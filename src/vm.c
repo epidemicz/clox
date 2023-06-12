@@ -137,6 +137,15 @@ static InterpretResult run() {
                 pop();
                 break;
             }
+            case OP_DEFINE_CONSTANT_GLOBAL: {
+                // should not be able to re-define a const
+                ObjString* name = READ_STRING();
+                Value value = peek(0);
+                value.mutable = false;
+                tableSet(&vm.globals, name, value);
+                pop();
+                break;
+            }
             case OP_SET_GLOBAL: {
                 ObjString* name = READ_STRING();
                 if (tableSet(&vm.globals, name, peek(0))) {
