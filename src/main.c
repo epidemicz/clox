@@ -94,6 +94,12 @@ static void runFile(const char* path) {
 int main(int argc, const char* argv[]) {
     printf("Hello from C!\n");
 
+
+    int x = 100;
+    int y = (x += 2, 10);
+
+    printf("%d, %d\n", x, y);
+
     initVM();
 
     if (argc == 1) {
